@@ -3,38 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | bonus_crypt</title>
-  </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=640 height=460 tabindex="-1" style="width: 640px; height: 460px; background: #231F20"></canvas>
-    <script src="Build/MafiaCrypt.loader.js"></script>
+    <title>Mafia Crypt | BonusManiac.com </title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
     <script>
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-
-        var canvas = document.querySelector("#unity-canvas");
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.position = "fixed";
-
-        document.body.style.textAlign = "left";
-      }
-
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/MafiaCrypt.data",
-        frameworkUrl: "Build/MafiaCrypt.framework.js",
-        codeUrl: "Build/MafiaCrypt.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "BonusManiac",
-        productName: "bonus_crypt",
-        productVersion: "0.3",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-    </script>
-  </body>
+            var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Builds.json");
+        </script>
+    </head>
+   
+    <body style="width: 100vh; height: 100vh; margin: 0px; padding: 0px; border: 0px none; position: relative; none repeat scroll 0% 0%;">
+        <div id="unityContainer" style="width: 100vh; height: 100vh; margin: 0px; padding: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);">
+            <canvas id="#canvas" width="500" height="500" style="cursor: default;"></canvas>
+        </div>
+    </body>
 </html>
